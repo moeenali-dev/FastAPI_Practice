@@ -28,6 +28,6 @@ def root():
 @app.post("/posts") 
 def create_posts(posts: Post): 
     post_dict = posts.model.dump()
-    post_dict = ['id'] = randrange(0,1000)
+    post_dict ['id'] = randrange(0,1000)
     my_posts.append(post_dict)
     return f"Your post is successfully created: \n Title:{posts.title} \n Content: {posts.content} \n Published: {posts.published} \n Reviews: {posts.reviews}"
