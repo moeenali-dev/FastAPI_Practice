@@ -24,4 +24,4 @@ def root():
 @app.post("/createposts") 
 def create_posts(posts = Post): 
     print(posts.dict()) 
-    return f"Your post is successfully created: \n Title: {posts['title']} \n Content: {posts['content']} \n Published: {posts['published']} \n Reviews: {posts['reviews']}  \n Ratings: {posts['ratings']}"
+    return f"Your post is successfully created: \n Title: posts.title ,\n Content: posts.content ,\n Published: posts.published , \n Reviews: posts.reviews ,  \n Ratings: posts.reviews"
