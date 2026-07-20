@@ -12,7 +12,7 @@ def home():
 def root():
     return("Hi this is my post")
 
-@app.post("/createposts")
-def create_posts(worldtimes : dict = Body):
-  print(worldtimes)
-  return f"Your post is successfully created: \n Title: {worldtimes['title']} Content: {worldtimes['content']}"
+@app.post("/createposts") 
+def create_posts(worldtimes : dict = Body): 
+    print(worldtimes) 
+    return f"Your post is successfully created: \n Title: {worldtimes['title']} Content: {worldtimes['content']}"
