@@ -44,4 +44,14 @@ def find_post(id):
 def get_specific_post(id: int):
     post = find_post(int(id))
     return {"Posts Details: Here is your post: ": post}
+
+def get_index(id):
+    for i, p in enumerate (my_posts):
+        if p["id"] == id:
+            return i
+        
+@app.delete("/posts/{id}")
+def delete_post(id: int):
+    post = get_index(id)
+    return ("Your post: f{id} has been deleted successfully")
     
