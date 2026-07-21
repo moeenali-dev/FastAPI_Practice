@@ -14,7 +14,7 @@ class Post(BaseModel):
     ratings: Optional[int] = None
 
 
-my_posts = [{"title: ": "Hey the title of my post is Foods " , "content:" : "Pakistani food is very scrumptious" , "published: ": "Yes it is published" , "id: " : 1} , {"title: ": "Hey the title of my post is Foods " , "content:" : "Mexican food is very scrumptious" , "published: ": "Yes it is published" , "id: " : 2}]
+my_posts = [{"title: ": "Hey the title of my post is Foods " , "content:" : "Pakistani food is very scrumptious" , "published: ": "Yes it is published" , "id" : 1} , {"title: ": "Hey the title of my post is Foods " , "content:" : "Mexican food is very scrumptious" , "published: ": "Yes it is published" , "id" : 2}]
 
     
 @app.get("/")
@@ -53,5 +53,6 @@ def get_index(id):
 @app.delete("/posts/{id}")
 def delete_post(id: int):
     post = get_index(id)
-    return ("Your post: f{id} has been deleted successfully")
+    my_posts.pop(post)
+    return {f"Your post": "{id} has been deleted successfully"}
     
