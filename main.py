@@ -1,4 +1,4 @@
-from fastapi import FastAPI , status , HTTPException
+from fastapi import FastAPI , status , HTTPException 
 from fastapi import Body
 from pydantic import BaseModel
 from typing import Optional
@@ -25,11 +25,12 @@ def home():
 def root():
     return{"data: ":  my_posts}
 
-@app.post("/posts") 
+@app.post("/posts" , status_code=status.HTTP_201_CREATED) 
 def create_posts(posts: Post): 
     post_dict = posts.model_dump()
     post_dict ['id'] = randrange(0,1000)
     my_posts.append(post_dict)
+    
     return {"data: " : post_dict}
 
 
