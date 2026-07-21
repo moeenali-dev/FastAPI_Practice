@@ -54,7 +54,7 @@ def get_index(id):
             return i
     return None
         
-@app.delete("/posts/{id}")
+@app.delete("/posts/{id}" , status_code=status.HTTP_204_NO_CONTENT)
 def delete_post(id: int):
     post = get_index(id)
     if post is None:
